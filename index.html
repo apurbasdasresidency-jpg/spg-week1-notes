@@ -1,0 +1,1016 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SPG Week 1 Notes</title>
+<meta name="description" content="Exam notes: Strategies for Professional Growth, Week 1: Teamwork and Getting Along (the 10 C's).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f4ee; --paper:#fffdf9; --ink:#1f1d1a; --muted:#6b655c; --line:#e7e1d6;
+  --accent:#c2410c; --accent-soft:#fdeee4; --star:#b45309; --star-bg:#fef3c7;
+  --code:#f1ece3; --shadow:0 1px 2px rgba(40,30,10,.05),0 8px 24px -12px rgba(40,30,10,.15);
+  --c-l:44%; --c-s:62%; --c-bg-l:96%;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#15140f; --paper:#1d1c17; --ink:#ece8df; --muted:#a39d91; --line:#2f2d26;
+    --accent:#fb923c; --accent-soft:#2b1d13; --star:#fbbf24; --star-bg:#33280f;
+    --code:#26241e; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px -12px rgba(0,0,0,.6);
+    --c-l:66%; --c-s:70%; --c-bg-l:13%;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15140f; --paper:#1d1c17; --ink:#ece8df; --muted:#a39d91; --line:#2f2d26;
+  --accent:#fb923c; --accent-soft:#2b1d13; --star:#fbbf24; --star-bg:#33280f;
+  --code:#26241e; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px -12px rgba(0,0,0,.6);
+  --c-l:66%; --c-s:70%; --c-bg-l:13%;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+#progress{position:fixed;top:0;left:0;height:3px;background:var(--accent);width:0;z-index:50;transition:width .1s}
+
+/* top bar */
+.topbar{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:10px;padding:10px 16px;
+  background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar .brand{font-family:Fraunces,serif;font-weight:700;font-size:17px;margin-right:auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.topbar .brand span{color:var(--accent)}
+.btn{font:600 13px Inter,sans-serif;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:7px 12px;cursor:pointer;display:inline-flex;gap:6px;align-items:center;white-space:nowrap}
+.btn:hover{border-color:var(--accent)}
+.btn[aria-pressed="true"]{background:var(--star-bg);border-color:var(--star);color:var(--star)}
+#menuBtn{display:none}
+
+/* layout */
+.layout{display:grid;grid-template-columns:270px minmax(0,1fr);gap:40px;max-width:1180px;margin:0 auto;padding:0 24px}
+nav.toc{position:sticky;top:64px;align-self:start;max-height:calc(100vh - 80px);overflow:auto;padding:24px 4px 40px 0;font-size:14px}
+.toc .t2{display:block;font-weight:600;color:var(--ink);text-decoration:none;padding:6px 10px;border-radius:8px;margin-top:6px}
+.toc .t3{display:flex;align-items:center;gap:8px;color:var(--muted);text-decoration:none;padding:4px 10px 4px 18px;border-radius:8px}
+.toc .t3 b{font:700 11px Inter;min-width:20px;height:20px;border-radius:6px;display:grid;place-items:center;background:var(--code);color:var(--muted)}
+.toc .t3 i{margin-left:auto;font-style:normal;color:#16a34a;font-weight:700}
+.toc .t3 i.on::after{content:"✓"}
+.toc a:hover{background:var(--paper)}
+.toc a.active{background:var(--accent-soft);color:var(--accent)}
+.toc a.active b{background:var(--accent);color:#fff}
+.toc .meter{margin:4px 10px 14px;font-size:12px;color:var(--muted)}
+.toc .meter div{height:6px;border-radius:9px;background:var(--line);margin-top:6px;overflow:hidden}
+.toc .meter div span{display:block;height:100%;width:0;background:#16a34a;transition:width .3s}
+
+main{padding:28px 0 120px;min-width:0}
+
+/* hero */
+.hero{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:36px 36px 30px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.hero::after{content:"TEAM";position:absolute;right:-10px;bottom:-40px;font:700 150px/1 Fraunces,serif;color:var(--accent);opacity:.07;pointer-events:none}
+.kicker{font:600 12px Inter;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.hero h1{font:700 clamp(30px,5vw,46px)/1.08 Fraunces,serif;margin:10px 0 12px;letter-spacing:-.01em}
+.hero p{color:var(--muted);margin:0;max-width:60ch}
+.team{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 0}
+.team span{background:var(--code);border-radius:10px;padding:6px 12px;font-size:14px}
+.team b{color:var(--accent);font-size:17px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}
+.stats div{border-top:2px solid var(--line);padding-top:10px}
+.stats b{font:700 28px Fraunces,serif;display:block}
+.stats small{color:var(--muted);font-size:12.5px}
+.legend{margin-top:20px;font-size:13.5px;color:var(--muted);display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+
+/* content */
+section.block{margin-top:56px}
+h2{font:700 clamp(24px,3.4vw,32px)/1.2 Fraunces,serif;margin:0 0 18px;letter-spacing:-.01em;padding-bottom:12px;border-bottom:2px solid var(--ink)}
+h3{font:700 20px/1.3 Fraunces,serif;margin:30px 0 10px}
+h4{font-size:15px;margin:22px 0 8px}
+p{margin:10px 0}
+ul,ol{padding-left:22px;margin:8px 0}
+li{margin:5px 0}
+li::marker{color:var(--accent)}
+strong{font-weight:650}
+blockquote{margin:16px 0;padding:14px 18px;background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:0 12px 12px 0;font-family:Fraunces,serif;font-size:17px}
+blockquote p{margin:4px 0}
+em{color:var(--muted)}
+.sub{margin-top:8px}
+
+.star{display:inline-block;color:var(--star);background:var(--star-bg);border-radius:6px;padding:0 5px;font-size:.82em;line-height:1.5;vertical-align:1px;margin-right:2px}
+.star.s2,.star.s3{font-weight:700}
+
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:12px;background:var(--paper)}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--code);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+tbody tr:hover{background:var(--accent-soft)}
+
+/* C-cards */
+.ccard{--c:hsl(var(--hue) var(--c-s) var(--c-l));--cbg:hsl(var(--hue) 60% var(--c-bg-l));
+  margin:26px 0;background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+.chead{display:flex;align-items:center;gap:14px;padding:16px 20px;background:var(--cbg);border-bottom:1px solid var(--line)}
+.cnum{font:700 22px/1 Fraunces,serif;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--c);color:var(--paper);flex:none}
+.chead h3{margin:0;font-size:23px;color:var(--c);flex:1}
+.done{font-size:13px;color:var(--muted);display:flex;gap:6px;align-items:center;cursor:pointer;user-select:none}
+.done input{accent-color:#16a34a;width:16px;height:16px}
+.ccard.is-done .chead{opacity:.75}
+.cbody{padding:6px 22px 18px}
+.cbody li::marker{color:var(--c)}
+.src{margin-top:20px}
+.src .tag{display:inline-block;font:700 11px Inter;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:999px;margin-right:8px;vertical-align:2px}
+.src-lecture .tag{background:#dbeafe;color:#1e40af}
+.src-slide .tag{background:#dcfce7;color:#166534}
+.src-professor .tag{background:#f3e8ff;color:#6b21a8}
+:root[data-theme="dark"] .src-lecture .tag{background:#1e2a44;color:#93c5fd}
+:root[data-theme="dark"] .src-slide .tag{background:#132b1d;color:#86efac}
+:root[data-theme="dark"] .src-professor .tag{background:#2a1a3a;color:#d8b4fe}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .src-lecture .tag{background:#1e2a44;color:#93c5fd}
+  :root:not([data-theme="light"]) .src-slide .tag{background:#132b1d;color:#86efac}
+  :root:not([data-theme="light"]) .src-professor .tag{background:#2a1a3a;color:#d8b4fe}
+}
+
+/* star focus mode */
+body.focus main :is(li,p,tr,blockquote):not(.has-star):not(:has(.has-star)){opacity:.28}
+body.focus main .src{opacity:1!important}
+
+#toTop{position:fixed;right:18px;bottom:18px;z-index:30;opacity:0;pointer-events:none;transition:opacity .2s}
+#toTop.show{opacity:1;pointer-events:auto}
+footer{margin-top:60px;color:var(--muted);font-size:13px;text-align:center}
+
+/* mobile */
+@media (max-width:900px){
+  .layout{grid-template-columns:1fr;padding:0 16px;gap:0}
+  #menuBtn{display:inline-flex}
+  nav.toc{position:fixed;top:0;left:0;bottom:0;width:min(300px,85vw);max-height:none;background:var(--bg);z-index:60;
+    padding:20px 12px;border-right:1px solid var(--line);transform:translateX(-100%);transition:transform .25s;box-shadow:var(--shadow)}
+  body.nav-open nav.toc{transform:none}
+  body.nav-open::after{content:"";position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:55}
+  .hero{padding:24px 20px}
+  .hero::after{display:none}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .cbody{padding:4px 16px 14px}
+  .chead{padding:14px 16px;flex-wrap:wrap}
+  .chead h3{font-size:20px}
+  .btn .lbl{display:none}
+}
+@media print{
+  .topbar,nav.toc,#toTop,#progress,.done{display:none!important}
+  .layout{display:block}
+  body{background:#fff}
+  .ccard{break-inside:avoid-page;box-shadow:none}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<div class="topbar">
+  <button class="btn" id="menuBtn" aria-label="Open contents">☰</button>
+  <div class="brand">SPG <span>Week 1</span> · Teamwork Notes</div>
+  <button class="btn" id="focusBtn" aria-pressed="false" title="Fade everything except ★ points">★ <span class="lbl">Important only</span></button>
+  <button class="btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">🌓</button>
+</div>
+
+<div class="layout">
+  <nav class="toc" id="toc">
+    <div class="meter">10 C's revised: <b id="doneCount">0</b>/10<div><span id="doneBar"></span></div></div>
+    <a class="t2" href="#0-module-roadmap-from-the-slides">Module Roadmap (from the slides)</a><a class="t2" href="#1-introduction-to-teamwork-w1l8">Introduction to Teamwork (W1L8)</a><a class="t2" href="#2-what-is-teamwork-w1l9-1-the-geese-lesson">What is Teamwork? (W1L9.1): The Geese Lesson</a><a class="t2" href="#3-why-teamwork-is-important-and-relevant-w1l9-2">Why Teamwork is Important and Relevant (W1L9.2)</a><a class="t2" href="#4-common-challenges-in-teamwork-slide">Common Challenges in Teamwork (slide)</a><a class="t2" href="#5-the-10-c-s-of-teamwork-order-matters">The 10 C's of Teamwork (ORDER MATTERS)</a><a class="t3" href="#c1-clarity"><b>1</b>Clarity<i data-tick="c1-clarity"></i></a><a class="t3" href="#c2-commitment"><b>2</b>Commitment<i data-tick="c2-commitment"></i></a><a class="t3" href="#c3-communication"><b>3</b>Communication<i data-tick="c3-communication"></i></a><a class="t3" href="#c4-competence"><b>4</b>Competence<i data-tick="c4-competence"></i></a><a class="t3" href="#c5-collaboration"><b>5</b>Collaboration<i data-tick="c5-collaboration"></i></a><a class="t3" href="#c6-coordination"><b>6</b>Coordination<i data-tick="c6-coordination"></i></a><a class="t3" href="#c7-connection"><b>7</b>Connection<i data-tick="c7-connection"></i></a><a class="t3" href="#c8-conflict-resolution"><b>8</b>Conflict Resolution<i data-tick="c8-conflict-resolution"></i></a><a class="t3" href="#c9-change-management"><b>9</b>Change Management<i data-tick="c9-change-management"></i></a><a class="t3" href="#c10-continuous-improvement"><b>10</b>Continuous Improvement<i data-tick="c10-continuous-improvement"></i></a><a class="t2" href="#6-closing-quotes-and-references-slides">Closing Quotes and References (slides)</a><a class="t2" href="#7-rapid-revision-who-what-which-c">RAPID REVISION: Who / What / Which C?</a><a class="t2" href="#8-possible-long-answer-question">Possible Long-Answer Question</a>
+  </nav>
+  <main>
+    <header class="hero">
+      <div class="kicker">IIT Madras BS · Strategies for Professional Growth</div>
+      <h1>Teamwork &amp; Getting Along</h1>
+      <p>Complete Week 1 exam notes, built from all 13 lecture transcripts and the 23-slide deck. Every story, list, number and definition is included.</p>
+      <div class="team"><span><b>T</b>ogether</span><span><b>E</b>veryone</span><span><b>A</b>chieves</span><span><b>M</b>ore</span></div>
+      <div class="stats">
+        <div><b>10</b><small>C's of teamwork</small></div>
+        <div><b>9</b><small>common challenges</small></div>
+        <div><b>10</b><small>benefits of teamwork</small></div>
+        <div><b>5</b><small>lessons from geese</small></div>
+      </div>
+      <div class="legend"><span class="star">★</span> likely exam point
+        <span><span class="src src-lecture" style="margin:0"><span class="tag">Lecture</span></span></span>
+        <span><span class="src src-slide" style="margin:0"><span class="tag">Slide</span></span></span>
+        <span><span class="src src-professor" style="margin:0"><span class="tag">Professor</span></span></span>
+      </div>
+    </header>
+    <section class="block" id="sec-0-module-roadmap-from-the-slides"><h2 id="0-module-roadmap-from-the-slides">0. Module Roadmap (from the slides)</h2><p>The week has 4 parts:</p>
+<ol>
+<li><strong>What is Teamwork?</strong></li>
+<li><strong>Why is Teamwork important and relevant?</strong></li>
+<li><strong>Common Challenges in Teamwork</strong></li>
+<li><strong>The 10 C&#39;s of Teamwork</strong></li>
+</ol>
+<p><strong><span class="star">★</span> TEAM acronym</strong> (title slide): <strong>T</strong>ogether <strong>E</strong>veryone <strong>A</strong>chieves <strong>M</strong>ore</p>
+
+</section><section class="block" id="sec-1-introduction-to-teamwork-w1l8"><h2 id="1-introduction-to-teamwork-w1l8">1. Introduction to Teamwork (W1L8)</h2><div class="sub"><h3 id="the-video-penguins-ants-and-crabs">The video: penguins, ants and crabs</h3><ul>
+<li>Each group faces a predator. <strong>Alone</strong> they panic. <strong>Together</strong> they defeat the enemy.</li>
+<li>What they show: <strong>presence of mind, quick thinking, playing to their strengths, and perfect coordination and connection</strong> while working toward a <strong>common goal</strong>.</li>
+<li>&quot;<strong>Together everyone achieves more</strong>&quot;, which is what teamwork is about.</li>
+</ul>
+</div><div class="sub"><h3 id="professor-s-lessons-from-the-video">Professor&#39;s lessons from the video</h3><ul>
+<li><strong>Fear is human.</strong> Everyone gets scared, and the cause is <strong>uncertainty about the outcome</strong>.</li>
+<li><strong><span class="star">★</span> In the face of danger or uncertainty: do NOT panic. Show restraint.</strong> That is how you gain control of yourself.</li>
+<li>On their own, people react according to their personality. <strong>Together, the force is much greater.</strong></li>
+<li>What the three videos have in common: <strong>seemingly weak creatures came together and overcame a powerful enemy.</strong></li>
+</ul>
+</div><div class="sub"><h3 id="two-real-world-examples-of-collective-power"><span class="star">★</span> Two real-world examples of collective power</h3><div class="table-wrap"><table><thead><tr>
+<th>Example</th>
+<th>What happened</th>
+</tr>
+</thead><tbody><tr>
+<td><strong>Employee / labour unions</strong> (after the Industrial Revolution)</td>
+<td>Factory workers were denied basic rights and amenities, and owners were profit-focused. Workers formed <strong>unions</strong> with <strong>union leaders</strong> as their voice to management. The result was a &quot;<strong>mini revolution</strong>&quot;. It was <strong>not a direct fight</strong>. It was raising issues of <strong>just cause</strong> with management.</td>
+</tr>
+<tr>
+<td><strong>Diversity &amp; Inclusion (D&amp;I)</strong> (last ~2 decades)</td>
+<td>People talked about accommodating different cultures and genders, but workplace systems and policies did not support it. Leaders came together, formed <strong>interest groups</strong>, and kept communicating. This led to <strong>policy changes across the board</strong>. D&amp;I is now part of most top corporates.</td>
+</tr>
+</tbody></table></div>
+</div></section><section class="block" id="sec-2-what-is-teamwork-w1l9-1-the-geese-lesson"><h2 id="2-what-is-teamwork-w1l9-1-the-geese-lesson">2. What is Teamwork? (W1L9.1): The Geese Lesson <span class="star s2">★★</span></h2><div class="sub"><h3 id="formal-definition-from-the-slides"><span class="star">★</span> Formal definition (from the slides)</h3><blockquote>
+<p>&quot;Teamwork is defined as <strong>collaboration by a group of people to achieve a common purpose</strong>. Teamwork is often a feature of day-to-day working, and is increasingly used to accomplish specific projects, in which case it may bring together people from <strong>different functions, departments, or disciplines</strong>. A team should ideally consist of people with <strong>complementary skills</strong>.&quot;
+(<em>Teamwork</em> (2011). In <strong>Business: The Ultimate Resource</strong>. A&amp;C Black.)</p>
+</blockquote>
+</div><div class="sub"><h3 id="geese-flying-in-a-v-formation-5-facts-and-the-lesson-behind-each"><span class="star">★</span> Geese flying in a V-formation: 5 facts and the lesson behind each</h3><div class="table-wrap"><table><thead><tr>
+<th>#</th>
+<th>What the geese do</th>
+<th>Teamwork lesson</th>
+</tr>
+</thead><tbody><tr>
+<td>1</td>
+<td>Each goose creates <strong>uplift</strong> for the goose behind it, so the whole flock flies more efficiently</td>
+<td><strong>Working as a team is more efficient than working alone</strong></td>
+</tr>
+<tr>
+<td>2</td>
+<td>A goose that leaves the V immediately has to work harder to keep up</td>
+<td>Moving <strong>toward the same destination</strong> together takes <strong>less individual effort</strong></td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Leadership rotates.</strong> A tired lead goose drops back and another takes the front</td>
+<td><strong>Shared leadership</strong> spreads the burden and improves efficiency</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Geese at the back <strong>honk</strong> to encourage the leader to keep its speed</td>
+<td><strong>Communication</strong> with the whole team matters, and <strong>encouraging/positive feedback</strong> promotes success</td>
+</tr>
+<tr>
+<td>5</td>
+<td>If a goose gets sick and falls out, <strong>two others stay with it</strong> until it recovers and can join another flock</td>
+<td><strong>Empathy and care</strong> for team members beats a selfish approach. &quot;A loss to the flock is a loss for all&quot;</td>
+</tr>
+</tbody></table></div><ul>
+<li>Key phrase: <strong>shared goals and shared leadership.</strong></li>
+<li>Professor&#39;s figure: the V-formation reduces effort by roughly <strong>30–60%</strong> (he said he wasn&#39;t sure of the exact number).</li>
+<li>Nobody teaches the geese this. It is <strong>inborn</strong>. Everyone shoulders the responsibility equally, which is how they fly across continents.</li>
+</ul>
+</div><div class="sub"><h3 id="teamwork-in-nature-brings-order-balance-and-harmony">Teamwork in nature brings ORDER, BALANCE and HARMONY</h3><p>Examples given: galaxies, stellar systems and the solar system; atoms → molecules → elements and compounds → materials; single cells → multicellular organisms; cells → tissues → organs → organ systems.
+<strong><span class="star">★</span> &quot;Together we achieve order, harmony and balance in every aspect of life.&quot;</strong></p>
+
+</div></section><section class="block" id="sec-3-why-teamwork-is-important-and-relevant-w1l9-2"><h2 id="3-why-teamwork-is-important-and-relevant-w1l9-2">3. Why Teamwork is Important and Relevant (W1L9.2)</h2><div class="sub"><h3 id="slide-list-10-benefits-of-teamwork"><span class="star">★</span> Slide list: 10 benefits of teamwork</h3><ol>
+<li>Builds <strong>competitive advantage</strong></li>
+<li>Saves <strong>time, energy, costs and resources</strong></li>
+<li>Covers <strong>competency and skill gaps</strong></li>
+<li>Improves <strong>workforce efficiency and productivity</strong></li>
+<li>Inspires <strong>ideation, creativity &amp; innovation</strong></li>
+<li>Builds <strong>higher morale</strong></li>
+<li><strong>Peer learning</strong> and self-improvement</li>
+<li>Creates <strong>synergy</strong></li>
+<li>Enhances <strong>workplace experience</strong></li>
+<li><strong>Balances needs &amp; goals</strong> of the organization (and individual)</li>
+</ol>
+</div><div class="sub"><h3 id="lecture-explanation-the-chain-of-reasoning">Lecture explanation (the chain of reasoning)</h3><ul>
+<li>A team draws on a <strong>diverse set of competencies, skills and abilities</strong>. Members <strong>complement</strong> each other and create <strong>positive synergy</strong>.</li>
+<li><strong>Synergy</strong> → generation of ideas → <strong>creativity and innovation</strong>.</li>
+<li><strong>Higher morale</strong> comes from encouraging, cheering, learning from, and <strong>even challenging</strong> one another, which brings out each person&#39;s best.</li>
+<li><strong>We lead ourselves AND share leadership.</strong> Shared goals lead to improved communication, <strong>healthy conflict</strong>, and better workplace efficiency.</li>
+<li>All of this creates a <strong>harmonious, positive workplace</strong>. That means a better experience, <strong>higher job satisfaction</strong>, happiness and fulfilment, and savings in time, energy, cost and resources. The result is &quot;<strong>co-creation and pure magic</strong>&quot;.</li>
+</ul>
+</div><div class="sub"><h3 id="ratan-tata-quote"><span class="star">★</span> Ratan Tata quote</h3><blockquote>
+<p>&quot;<strong>If you want to walk fast, walk alone. But if you want to walk long, walk together.</strong>&quot;</p>
+</blockquote>
+<ul>
+<li>Why: <strong>no task is accomplished by a single individual.</strong> You need people of different kinds blending in sync.</li>
+<li><strong>The leader&#39;s job</strong> is to blend different strengths and give people the <strong>right roles and responsibilities</strong> so they work in tandem.</li>
+</ul>
+</div><div class="sub"><h3 id="example-the-account-leader-aligning-strengths-with-roles"><span class="star">★</span> Example: the account leader aligning strengths with roles</h3><ul>
+<li><strong>Problem:</strong> many mid-level managers had the same managerial responsibilities. Nobody enjoyed the work, and team output was poor.</li>
+<li><strong>What they did:</strong> held <strong>one-on-one meetings during annual performance appraisals</strong> to find what brought out each person&#39;s best.</li>
+<li><strong>Three patterns emerged:</strong><ol>
+<li>People who wanted <strong>creative / innovative</strong> work</li>
+<li>People strong with <strong>metrics/numbers</strong> but uncomfortable dealing with people (reporting to management, etc.)</li>
+<li>People strong in <strong>people relationships</strong> (inside the team and with external teams) but uncomfortable with numbers</li>
+</ol>
+</li>
+<li><strong>Fix:</strong> <strong>aligned each person&#39;s strengths with their role</strong> as far as possible.</li>
+<li><strong>Result:</strong> people enjoyed their work, became more comfortable, expressive and &quot;shining&quot;, and the team output became very effective.</li>
+</ul>
+
+</div></section><section class="block" id="sec-4-common-challenges-in-teamwork-slide"><h2 id="4-common-challenges-in-teamwork-slide">4. Common Challenges in Teamwork (slide) <span class="star">★</span></h2><p>Learn all 9:</p>
+<ol>
+<li><strong>Lack of Honesty and Trust</strong></li>
+<li><strong>Conflict and Tension</strong></li>
+<li><strong>Comparison and Competition</strong></li>
+<li><strong>Lack of Transparency</strong></li>
+<li><strong>No long-term thinking</strong></li>
+<li><strong>Working in silos</strong></li>
+<li><strong>Lack of direction</strong></li>
+<li><strong>Lack of common goals</strong></li>
+<li><strong>Not managing the Weakest Link</strong></li>
+</ol>
+<p><em>Discussion-forum question:</em> &quot;What are some of the challenges associated with working in a team? Illustrate/explain with a real-life example.&quot;</p>
+
+</section><section class="block" id="sec-5-the-10-c-s-of-teamwork-order-matters"><h2 id="5-the-10-c-s-of-teamwork-order-matters">5. <span class="star s3">★★★</span> The 10 C&#39;s of Teamwork (ORDER MATTERS)</h2><div class="table-wrap"><table><thead><tr>
+<th>#</th>
+<th>C</th>
+<th>Core idea in one line</th>
+</tr>
+</thead><tbody><tr>
+<td>1</td>
+<td><strong>Clarity</strong></td>
+<td>Vision, purpose and values plus clear roles. &quot;The most primary, deserves to be first&quot;</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Commitment</strong></td>
+<td>Personal, internal honour code. Turn expectations into clear agreements</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Communication</strong></td>
+<td>&quot;At the core of teamwork.&quot; Safe space, psychological safety, standard processes</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Competence</strong></td>
+<td>Diverse, complementary skills. Right person, right role (NASCAR pit crew)</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Collaboration</strong></td>
+<td><strong>Divergent</strong> thinking, psychological safety, shared leadership (Sundar Pichai)</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Coordination</strong></td>
+<td><strong>Convergent</strong> thinking: plan, schedule, execute (Mumbai dabbawalas)</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Connection</strong></td>
+<td>Getting along: respect, trust, empathy, celebration (Dr. Abdul Kalam story)</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>Conflict Resolution</strong></td>
+<td>Source of conflict = <strong>expectations</strong>. Dialogue, active listening, win-win</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>Change Management</strong></td>
+<td>Plan → initiate → control → stabilize. Expect resistance</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>Continuous Improvement</strong></td>
+<td>Kaizen, 1% per day, tiny steps, feedback loops</td>
+</tr>
+</tbody></table></div><p><strong>Mnemonic:</strong> <em>&quot;Clear Commitment Comes from Competent Collaborators Coordinating, Connecting, Conflict-resolving, Changing, Continuously improving.&quot;</em></p>
+
+<article class="ccard" style="--hue:0" data-id="c1-clarity">
+<header class="chead"><span class="cnum">1</span><h3 id="c1-clarity">Clarity</h3>
+<label class="done"><input type="checkbox" data-done="c1-clarity"> revised</label></header>
+<div class="cbody"><p class="src src-lecture"><span class="tag">Lecture</span></p>
+<ul>
+<li>The organisation&#39;s <strong>vision, purpose and core values</strong> must be <strong>clearly defined and communicated to teams regularly</strong>.</li>
+<li>This helps members <strong>align and balance their own needs, goals and values with the organisation&#39;s</strong>.</li>
+<li>Members see the <strong>big picture</strong>: how their role contributes, and how it makes the world better. Their work feels <strong>worthwhile and important</strong>.</li>
+<li><strong><span class="star">★</span> Clarity inspires:</strong> shared vision, <strong>ownership, intrinsic motivation, commitment</strong>, which lead to <strong>greater job satisfaction</strong>, which leads to <strong>higher retention rates</strong>.</li>
+<li>It helps you choose the right role and the right organisation, and pick the right people for your team. It helps <strong>leaders, team members AND the organisation</strong>: &quot;it works in all ways.&quot;</li>
+</ul>
+<p class="src src-slide"><span class="tag">Slide</span></p>
+<ul>
+<li><strong>Align and balance organization, team and individual</strong> in terms of: <strong>Vision, Purpose, Mission, Core Values</strong></li>
+<li><strong>Clear and well-defined:</strong><ul>
+<li><strong>Roles &amp; responsibilities with accountability</strong></li>
+<li><strong>Individual and shared goals &amp; objectives</strong></li>
+<li><strong>Rules, policies, standards, processes</strong></li>
+</ul>
+</li>
+</ul>
+<p><strong>Professor&#39;s points:</strong></p>
+<ul>
+<li><strong><span class="star">★</span> Clarity is &quot;very very primary&quot; and &quot;deserves the position of being first.&quot;</strong> It applies to an individual as well as a team. A team can&#39;t succeed unless each individual is clear about themselves.</li>
+<li><strong>Army example:</strong> in war the front stretches for miles with thousands of soldiers. Orders and roles must be clear <strong>and passed down the hierarchy to the last man</strong>. The last soldier on the ground must know what to do in different circumstances.</li>
+<li><strong><span class="star">★</span> ABC of Communication: A = Accuracy, B = Brevity, C = Clarity</strong></li>
+<li><strong><span class="star">★</span> Story: mobile left on the hillock (the helper and the cycle)</strong><ul>
+<li>A friend left his mobile on the breakfast table at the top of a hill and asked a restaurant helper, &quot;<strong>Can you go have a look?</strong>&quot;</li>
+<li>He said &quot;take my cycle&quot;. The helper <strong>couldn&#39;t ride</strong>, so he <strong>pushed it uphill</strong>. It took 15 minutes instead of about 3.</li>
+<li>Then the helper came back <strong>without the phone</strong>: &quot;You told me to <strong>look</strong> at the mobile. I saw it, it&#39;s there. You didn&#39;t tell me to <strong>get</strong> it.&quot;</li>
+<li><strong>Lesson 1:</strong> You need clarity about your own role <strong>and about your teammate&#39;s position/abilities</strong> (you didn&#39;t know he couldn&#39;t cycle). &quot;Understand each other&#39;s position.&quot;</li>
+<li><strong>Lesson 2:</strong> Give <strong>clear, complete instructions</strong>. &quot;<strong>Like algorithms</strong>: do this, then this; if yes do this, if not do that.&quot;</li>
+</ul>
+</li>
+</ul>
+
+</div></article><article class="ccard" style="--hue:36" data-id="c2-commitment">
+<header class="chead"><span class="cnum">2</span><h3 id="c2-commitment">Commitment</h3>
+<label class="done"><input type="checkbox" data-done="c2-commitment"> revised</label></header>
+<div class="cbody"><p class="src src-lecture"><span class="tag">Lecture</span></p>
+<ul>
+<li><strong><span class="star">★</span> Cricket example:</strong> one player stops the ball at the boundary at the last moment, and two others back him up with collection and throwing. Together they <strong>save one run</strong>. <strong>&quot;Every run counts.&quot;</strong></li>
+<li>Commitment to the game, to work, to excellence <strong>starts with personal internal commitment to oneself</strong>. That makes you <strong>go the extra mile</strong> and give your best.</li>
+<li><strong><span class="star">★</span> What inspires commitment?</strong><ul>
+<li><strong>Shared vision, shared goals</strong></li>
+<li><strong>Well-defined roles and responsibilities</strong>: who does <strong>what, when, why, with whom, where</strong></li>
+<li><strong>Service Level Agreements (SLAs)</strong> when a <strong>client</strong> is involved (formal agreements)</li>
+</ul>
+</li>
+<li>Inside teams there usually <strong>aren&#39;t</strong> clear agreements. The lead expects things from members, members from the lead, and members from each other. So <strong>expectations and intentions should be turned into clear mutual agreements</strong> that define <strong>outcomes, timelines and deliverables</strong>.<ul>
+<li>This <strong>reduces or eliminates misunderstandings, assumptions and ambiguity</strong>, which boosts <strong>productivity, performance and commitment</strong>.</li>
+</ul>
+</li>
+<li><strong>Value team members and their contribution</strong>, like geese <strong>honking</strong> to encourage each other and strengthen their <strong>collective commitment</strong>.</li>
+<li><strong><span class="star">★</span> The maid example:</strong> she agreed to tell the instructor by the previous night if she wasn&#39;t coming. Once she couldn&#39;t get through and made <strong>~100 missed calls</strong>. There was <strong>no written agreement</strong>, yet she kept her commitment. She was referred to others as someone you could <strong>trust and rely on</strong>, even if her work wasn&#39;t 100% perfect.</li>
+<li><strong><span class="star">★</span> Simon Sinek video:</strong> being there for one another and <strong>trust</strong> are basic tenets of teamwork.</li>
+</ul>
+<p class="src src-slide"><span class="tag">Slide</span></p>
+<ul>
+<li>Clearly defined roles and responsibilities, shared vision</li>
+<li><strong>SLAs (Service Level Agreements)</strong></li>
+<li><strong>Convert expectations &amp; intentions into clear (written) agreements</strong>, which give clear <strong>outcomes, timelines, deliverables</strong></li>
+<li><strong><span class="star">★</span> &quot;Commitment is an Honor Code, it is to yourself. It is &#39;Personal and Internal&#39;&quot;</strong></li>
+<li>Commitment makes you <strong>go the extra mile</strong> to put in your best</li>
+<li><strong>Value team members and their contribution</strong> to inspire commitment</li>
+</ul>
+<p><strong>Professor: <span class="star">★</span> Armed forces story (the section commander)</strong></p>
+<ul>
+<li>A <strong>section commander</strong> (in charge of <strong>10 soldiers</strong>) sees one of his men dying in a trench <strong>10–15 m away</strong> during a fierce battle.</li>
+<li>He radios his <strong>platoon commander</strong>, who says <strong>no</strong>: leaving would open a gap and a vulnerability, and &quot;I can&#39;t lose you too.&quot;</li>
+<li>Out of commitment to his comrade, he <strong>crawls over anyway</strong>. The soldier dies in his lap.</li>
+<li>When asked why he risked it: &quot;*My presence felt so good to him that he breathed his last easily. His last words were, &#39;<strong>Sir, I knew you will come.</strong>&#39;*&quot;</li>
+<li>Lesson: <strong>commitment to your people/colleagues</strong>, and the trust that comes from it.</li>
+</ul>
+<p><strong>Professor: <span class="star">★</span> Definition and deep vs surface commitment</strong></p>
+<ul>
+<li><strong><span class="star">★</span> &quot;Commitment is a deep intent to make sure things happen the way we envision.&quot;</strong></li>
+<li><strong>Plan the micro-level details:</strong> who does what, deadlines, resources needed, time required, <strong>contingencies</strong> if things go wrong.</li>
+<li><strong>Surface-level commitment:</strong> &quot;I will do the project.&quot;</li>
+<li><strong>Deep commitment:</strong> When do we meet next? What will we discuss? <strong>Who owns each action item?</strong> <strong>Who tracks what doesn&#39;t go to plan?</strong> There is constant focus on <strong>execution</strong>.</li>
+<li>Commitment means being <strong>fully involved</strong>, watching for <strong>obstacles</strong>, keeping people <strong>in sync</strong>, and <strong>making progress</strong>.</li>
+<li><strong><span class="star">★</span> Words of commitment:</strong> <em>date, time, contingency, backup, plan of action.</em></li>
+<li><strong><span class="star">★</span> NOT commitment:</strong> vague words like &quot;it will be done&quot; or &quot;we will do it&quot; <strong>with no date or time</strong>. Commitment <strong>does not assume everything goes to plan</strong>. It asks how to <strong>mitigate</strong> if it doesn&#39;t.</li>
+</ul>
+
+</div></article><article class="ccard" style="--hue:72" data-id="c3-communication">
+<header class="chead"><span class="cnum">3</span><h3 id="c3-communication">Communication</h3>
+<label class="done"><input type="checkbox" data-done="c3-communication"> revised</label></header>
+<div class="cbody"><p class="src src-lecture"><span class="tag">Lecture</span></p>
+<ul>
+<li><strong><span class="star">★</span> &quot;Communication is at the core of teamwork.&quot;</strong></li>
+<li>Teams have diverse people: <strong>introverts, extroverts, ambiverts</strong>, listeners, speakers, and people who struggle with language or communication skills.</li>
+<li><strong>Create a safe, non-judgmental space</strong> for everyone to share.</li>
+<li><strong>Informal space</strong> breaks the ice, helps people get to know each other, and lets them express themselves freely. It also builds <strong>social, interaction, communication and language skills</strong>.<ul>
+<li><strong><span class="star">★</span> Example: TGIF (&quot;Thank God It&#39;s Friday&quot;)</strong>. Every Friday the project team met for informal events, games, pranks, and short presentations on passions, hobbies and new technologies. This made it <strong>easier to speak up in formal meetings</strong>.</li>
+</ul>
+</li>
+<li><strong>Formal space</strong> must be <strong>welcoming, encouraging and involving</strong>, so people ask questions, share opinions, take part in dialogue, listen and collaborate.</li>
+<li><strong>Knowledge sharing:</strong> build a <strong>knowledge repository / bank</strong> of best practices, <strong>templates, guidelines, processes</strong> and lessons learned. Share it <strong>within and across teams</strong>. This indirectly builds <strong>commitment and intrinsic motivation</strong>, because people learn and also share.</li>
+<li><strong><span class="star">★</span> Fundamental principle:</strong> whether formal or informal, communication must be <strong>empowered, open, honest, transparent</strong>, with <strong>mutual respect, trust and empathy</strong>. This is called <strong>creating PSYCHOLOGICAL SAFETY in the workplace</strong>.</li>
+<li><strong>Clear, streamlined processes, templates and guidelines</strong> make formal communication smoother and raise <strong>productivity</strong>. Examples: how to run meetings, <strong>minutes-of-meeting templates</strong>, internal emails, formal emails to clients.</li>
+<li><strong>Large organisations</strong> usually have standards (documented or available for reference). <strong>When you join, spend time studying and observing these processes and standards.</strong></li>
+<li><strong>Small organisations</strong> may not have them, so <strong>take the initiative to set them up</strong> for everyone&#39;s benefit.</li>
+</ul>
+<p class="src src-slide"><span class="tag">Slide</span></p>
+<ul>
+<li>Create space to <strong>ask questions and give answers</strong></li>
+<li>Share <strong>ideas, experiences, and best practices</strong></li>
+<li><strong>Empower through open, honest, transparent interaction</strong></li>
+<li><strong>Clear guidelines for email, messages, meetings, Minutes of Meeting (MOM), internal and external communication</strong></li>
+<li><strong>Streamlined process for feedback, escalation, appraisals, follow-ups and timelines</strong></li>
+</ul>
+
+</div></article><article class="ccard" style="--hue:108" data-id="c4-competence">
+<header class="chead"><span class="cnum">4</span><h3 id="c4-competence">Competence</h3>
+<label class="done"><input type="checkbox" data-done="c4-competence"> revised</label></header>
+<div class="cbody"><p class="src src-lecture"><span class="tag">Lecture</span></p>
+<ul>
+<li>A team has <strong>diverse competencies</strong> to <strong>maximise each person&#39;s potential, strengths, capabilities and skills</strong>, and to <strong>bridge and cover skill gaps</strong>.</li>
+<li><strong><span class="star">★</span> Types of competencies:</strong> technical, functional, <strong>domain-specific</strong>, leadership, <strong>behavioural</strong>, managerial, <strong>soft skills, life skills</strong>.</li>
+<li><strong>Complementary</strong> strengths, talents, abilities and skills lead to <strong>learning from each other</strong>, which improves <strong>creativity and innovation</strong>.</li>
+<li><strong>Like the geese:</strong> each member <strong>leads him/herself</strong> by taking <strong>ownership and responsibility for shared goals</strong>, and contributes to <strong>collective goals as a team player, not as an individual</strong>.</li>
+<li><strong><span class="star">★</span> Shared vision + shared leadership + shared goals lead to effective collaboration, cooperation and coordination.</strong></li>
+<li><strong><span class="star">★</span> NASCAR pit crew video</strong> (changing four tyres): a team of diverse competencies working toward a common goal.<blockquote>
+<p>&quot;<strong>The right person, with the right competencies, in the right role, at the right place, performing the right work, in the right way</strong>, and that is pure magic.&quot;</p>
+</blockquote>
+</li>
+</ul>
+<p class="src src-slide"><span class="tag">Slide</span></p>
+<ul>
+<li><strong><span class="star">★</span> &quot;Core competence is getting along, working together in harmony towards a shared goal and shared vision&quot;</strong></li>
+<li><strong>Diverse competencies to bridge gaps</strong></li>
+<li><strong>Complementary strengths, talents, abilities and skills</strong></li>
+<li><strong>Lead oneself</strong> by taking <strong>responsibility, initiative and ownership</strong></li>
+<li><strong>Contribute like a team member (not as an individual)</strong></li>
+<li><strong>NASCAR slide text:</strong> the pit crew works toward the common goal of <strong>winning the race</strong>. Their plan is to <strong>work at top speed with no errors</strong> while checking the car, fixing parts, changing tyres and pumping gas. <strong>Each member has a specific job and a clear sense of what to do</strong>, and each <strong>keeps fine-tuning their job to shave time off pit stops</strong>, which <strong>can win or lose a race</strong>.</li>
+</ul>
+
+</div></article><article class="ccard" style="--hue:144" data-id="c5-collaboration">
+<header class="chead"><span class="cnum">5</span><h3 id="c5-collaboration">Collaboration</h3>
+<label class="done"><input type="checkbox" data-done="c5-collaboration"> revised</label></header>
+<div class="cbody"><p class="src src-lecture"><span class="tag">Lecture</span></p>
+<ul>
+<li><strong>Collaborative teamwork builds a huge competitive advantage.</strong> It brings out the best in <strong>creativity, innovation, productivity and performance</strong>.</li>
+<li><strong><span class="star">★</span> Leaders act as FACILITATORS and create PSYCHOLOGICAL SAFETY to build TRUST.</strong></li>
+<li><strong><span class="star">★</span> Psychological safety = creating a safe, non-judgmental space and environment.</strong></li>
+<li>Psychological safety is essential for <strong>DIVERGENT thinking</strong>. It activates the team&#39;s diverse backgrounds and skills. Members get <strong>freedom and independence</strong> to explore, share and exchange ideas.</li>
+<li><strong><span class="star">★</span> Power goes to shared leadership, shared vision, shared goals, shared creation and shared innovation, NOT to authority or hierarchy.</strong></li>
+<li><strong>Equal access to resources</strong>, <strong>equal opportunity</strong> to participate, speak, share and present.</li>
+<li><strong>Risk-taking is allowed.</strong> People are not afraid of <strong>mistakes or failure</strong>.</li>
+<li><strong>Open, honest, transparent communication</strong> is key. <strong>Icebreakers, games and informal events</strong> build engagement and involvement.</li>
+<li><strong><span class="star">★</span> Levels of collaboration:</strong><ul>
+<li><strong>Within</strong> a team</li>
+<li><strong>Across</strong> teams (horizontal and vertical in the organisation)</li>
+<li>With <strong>clients, service providers, partners</strong></li>
+</ul>
+</li>
+<li>Collaboration across teams and locations is helped by <strong>collaborative tools</strong> and <strong>well-defined, streamlined processes</strong>.</li>
+</ul>
+<p class="src src-slide"><span class="tag">Slide</span></p>
+<ul>
+<li><strong>Generation of ideas</strong> by activating a team&#39;s <strong>collective talents and skills</strong></li>
+<li><strong>Equal access</strong> to opportunities and resources</li>
+<li>Exchange of creative and innovative ideas (<strong>irrespective and independent of authority and hierarchy</strong>)</li>
+<li><strong>Facilitate shared leadership</strong> toward common goals</li>
+<li><strong>Collaborative tools and streamlined processes</strong> for shared tasks <strong>across locations and teams</strong></li>
+</ul>
+<p><strong>Professor: <span class="star">★</span> Sundar Pichai (Google CEO)</strong></p>
+<ul>
+<li>He is highly competent technically, but <strong>that is not what made him CEO</strong>. Google has plenty of top technologists and architects.</li>
+<li><strong><span class="star">★</span> The biggest ability a CEO needs is getting people to work together.</strong> Experts are attached to their own viewpoints.</li>
+<li><strong>A leader balances</strong>: listens to every viewpoint, creates coordination, and <strong>drives the group to a CONSENSUS</strong>.</li>
+<li><strong><span class="star">★</span> &quot;A leader is finally a person amongst equals&quot;</strong>: someone who can get along, listen <strong>empathetically</strong>, and build consensus.</li>
+</ul>
+
+</div></article><article class="ccard" style="--hue:180" data-id="c6-coordination">
+<header class="chead"><span class="cnum">6</span><h3 id="c6-coordination">Coordination</h3>
+<label class="done"><input type="checkbox" data-done="c6-coordination"> revised</label></header>
+<div class="cbody"><p class="src src-lecture"><span class="tag">Lecture</span></p>
+<ul>
+<li><strong><span class="star">★</span> Coordination FOLLOWS collaboration.</strong><ul>
+<li><strong>Collaboration = DIVERGENT thinking</strong> (getting ideas on the table)</li>
+<li><strong>Coordination = CONVERGENT thinking</strong> (narrow down, pick the idea that works for everyone and meets the criteria, then <strong>implement</strong> it)</li>
+</ul>
+</li>
+<li>It is about <strong>details, planning, scheduling, execution</strong>, and identifying <strong>coordination points</strong>: tasks, timelines, deliverables, who does what, who needs what, how, when, where.</li>
+<li><strong>Clear visibility</strong> of your own and others&#39; progress and direction is vital.</li>
+<li><strong>Peer cooperation is key</strong>: peers assist and support each other.</li>
+<li><strong><span class="star">★</span> Mumbai Dabbawalas case study:</strong><ul>
+<li><strong>~5,000 dabbawalas</strong> serve <strong>~2 lakh (200,000) Mumbaikars</strong> with home-cooked food</li>
+<li><strong>100% customer satisfaction</strong>, <strong>99.9999% performance</strong></li>
+<li>A case study for <strong>clarity, commitment, coordination and cooperation</strong></li>
+<li><strong><span class="star">★</span> For coordination to work at its best, you need clarity, commitment, effective communication and competence.</strong></li>
+</ul>
+</li>
+</ul>
+<p class="src src-slide"><span class="tag">Slide</span></p>
+<ul>
+<li><strong>Coordination is all about convergent thinking</strong></li>
+<li><strong>Converge on one or two ideas, then plan, schedule, execute</strong></li>
+<li><strong>Integrate execution plans</strong></li>
+<li><strong>Visibility on each other&#39;s progress and direction</strong></li>
+<li><strong>Assist and support peers</strong></li>
+</ul>
+<p class="src src-professor"><span class="tag">Professor</span></p>
+<ul>
+<li>Activities students did: the <strong>A-frame march</strong> and the <strong>caterpillar walk</strong>.</li>
+<li>The event itself needed coordination among many stakeholders: the <strong>IIT Madras BS Degree studio team, the Dean of Students&#39; office, faculty, students and assistants</strong>. Their <strong>synchronisation and coordination</strong> made it a success.</li>
+</ul>
+
+</div></article><article class="ccard" style="--hue:216" data-id="c7-connection">
+<header class="chead"><span class="cnum">7</span><h3 id="c7-connection">Connection</h3>
+<label class="done"><input type="checkbox" data-done="c7-connection"> revised</label></header>
+<div class="cbody"><p class="src src-lecture"><span class="tag">Lecture</span></p>
+<ul>
+<li><strong><span class="star">★</span> Connection = getting along with one another in harmony and peace.</strong></li>
+<li>Teams work together for long periods, so they need <strong>mutual respect, trust and understanding</strong>. This is the foundation for <strong>open, honest, transparent communication</strong>, which leads to effective <strong>collaboration and coordination</strong> and inspires <strong>commitment</strong>.</li>
+<li><strong>Like the geese:</strong> cheer and motivate each other, and <strong>care for one another in times of need</strong>. Support each other <strong>through thick and thin</strong>.</li>
+<li><strong><span class="star">★</span> Empathy, caring and guidance transform the workplace.</strong> This comes from:<ul>
+<li><strong>Valuing individuals and their contribution</strong></li>
+<li><strong>Acknowledging and appreciating milestones and achievements</strong></li>
+<li><strong>Celebrating in authentic, spontaneous and unique ways</strong> (also covered in the <em>Leadership Lessons</em> module)</li>
+</ul>
+</li>
+</ul>
+<p class="src src-slide"><span class="tag">Slide</span></p>
+<ul>
+<li><strong>Formal team building</strong> to build <strong>self-worth, self-trust and mutual trust</strong></li>
+<li><strong>Informal get-togethers</strong></li>
+<li>Cultivate <strong>empathy and caring through good and bad times</strong></li>
+<li>Offer <strong>guidance and support</strong> to one another</li>
+<li><strong>Acknowledge and appreciate milestones and successes</strong></li>
+</ul>
+<p><strong>Professor: <span class="star s2">★★</span> Dr. A.P.J. Abdul Kalam story (trust and empathy)</strong></p>
+<ul>
+<li>Point: build <strong>trust</strong> by understanding each member&#39;s <strong>personal and professional</strong> needs.</li>
+<li>A scientist on an important project asks his boss to <strong>leave at 5:30 pm</strong> to take his <strong>children to an exhibition</strong>. The request is unusual, so the boss realises it must matter a lot and <strong>says yes</strong>.</li>
+<li>The scientist gets absorbed in work and only finishes around <strong>8 pm</strong>. He goes home feeling guilty about his kids and his wife.</li>
+<li>At home his wife is calm and gives him coffee: &quot;<strong>Your manager came and took the kids to the exhibition.</strong> He&#39;ll drop them back in 10–15 minutes.&quot;</li>
+<li><strong>The boss was Dr. Abdul Kalam.</strong></li>
+<li><strong><span class="star">★</span> Lesson:</strong> a good leader takes care of the project <strong>and the integrity of the team member&#39;s family</strong>. &quot;<strong>Unless you are integrated and happy as a family unit, you cannot really be productive in the office.</strong>&quot; It shows forethought, experience and <strong>empathy</strong>.</li>
+</ul>
+
+</div></article><article class="ccard" style="--hue:252" data-id="c8-conflict-resolution">
+<header class="chead"><span class="cnum">8</span><h3 id="c8-conflict-resolution">Conflict Resolution</h3>
+<label class="done"><input type="checkbox" data-done="c8-conflict-resolution"> revised</label></header>
+<div class="cbody"><p class="src src-lecture"><span class="tag">Lecture</span></p>
+<ul>
+<li>Conflict will happen: <strong>between team members</strong>, <strong>between the lead and the team</strong>, or <strong>with the client</strong>.</li>
+<li><strong><span class="star">★</span> Psychological safety is very important for conflict resolution because it &quot;sets the space.&quot;</strong></li>
+<li><strong>Prevention:</strong> a safe, non-judgmental space with open, transparent, honest, <strong>empathetic</strong> communication, where everyone is <strong>valued</strong> and there is good <strong>connection</strong>. This goes a long way in <strong>preventing</strong> conflict.</li>
+<li><strong><span class="star">★</span> When conflict happens:</strong> have a <strong>dialogue</strong>, <strong>listen actively</strong> to understand what is going on and the <strong>underlying root causes</strong>, and look for <strong>WIN-WIN solutions</strong>.</li>
+<li><strong>Main goal:</strong> keep a <strong>peaceful, harmonious and trusting</strong> workplace.</li>
+</ul>
+<p class="src src-slide"><span class="tag">Slide</span></p>
+<ul>
+<li><strong>Clear rules and guidelines</strong> for <strong>different types and severities</strong> of conflict</li>
+<li><strong>Well-defined escalation and resolution mechanism</strong></li>
+<li><strong>Effective communication and listening</strong></li>
+<li><strong>Build preventive and proactive strategies</strong></li>
+</ul>
+<p class="src src-professor"><span class="tag">Professor</span></p>
+<ul>
+<li><strong><span class="star">★</span> &quot;If there is no conflict between employees, there must be something seriously wrong.&quot;</strong> Conflict is normal.</li>
+<li><strong><span class="star">★</span> The SOURCE of every conflict is EXPECTATION.</strong> Conflict comes from a gap between <strong>expectation and the outcome achieved</strong>.</li>
+<li><strong>Interpersonal conflict</strong> (between people) is different from <strong>inner conflict</strong> (inside yourself: should I do this or avoid it?).</li>
+<li><strong><span class="star">★</span> &quot;ABC&quot; strategy people use to escape tasks (this is NOT the ABC of communication):</strong><ul>
+<li><strong>A = Avoid</strong> the task you don&#39;t want to do</li>
+<li><strong>B = Bypass</strong>: if the boss watches closely, you work around it, do something else and <strong>look busy</strong></li>
+<li><strong>C = Confuse</strong>: if you can&#39;t avoid or bypass, you muddle things and <strong>create conflict somewhere</strong>, which then never ends</li>
+</ul>
+</li>
+<li><strong>Remedy:</strong> be <strong>clear about your role</strong>, <strong>accept your part</strong> as a responsible member, and <strong>contribute</strong> to the end result.</li>
+<li>For <strong>interpersonal, inter-team or inter-group conflict</strong>, it can be resolved if <strong>someone intervenes</strong> who looks <strong>rationally</strong> at the arguments for and against, <strong>keeping the organisation&#39;s health in mind</strong>.</li>
+<li><strong><span class="star">★</span> Resolution comes from:</strong> understanding each other&#39;s roles, <strong>give and take</strong>, and <strong>putting your own or your group&#39;s interest below the organisation&#39;s overall growth and objective</strong>.</li>
+</ul>
+
+</div></article><article class="ccard" style="--hue:288" data-id="c9-change-management">
+<header class="chead"><span class="cnum">9</span><h3 id="c9-change-management">Change Management</h3>
+<label class="done"><input type="checkbox" data-done="c9-change-management"> revised</label></header>
+<div class="cbody"><p class="src src-lecture"><span class="tag">Lecture</span></p>
+<ul>
+<li><strong><span class="star">★</span> &quot;Change is constant.&quot;</strong> The instructor&#39;s company <strong>reorganised every year</strong>. The first time felt like the world shifting. Over time they <strong>adapted faster</strong> and even started to look forward to it.</li>
+<li><strong><span class="star">★</span> Types and sources of change at the workplace:</strong><ul>
+<li><strong>Reorganisations</strong></li>
+<li><strong>Mergers, acquisitions and integrations</strong> (some smooth and friendly, some not; <strong>resistance and resentment are common</strong>)</li>
+<li><strong>Strategy changes</strong> (a strategy makeover with cascading impact)</li>
+<li><strong>Market changes</strong> (new competitors, new markets)</li>
+<li><strong>Leadership/manager changes</strong> (new people join, old ones leave)</li>
+<li><strong>Role changes</strong> (promotion or a different role, with new objectives and growth)</li>
+<li><strong>Workflow, process and project changes</strong> (projects can last years, months or weeks)</li>
+<li><strong>Location changes</strong> (within the organisation, <strong>offsite ↔ onsite</strong>), <strong>new client / new culture / new work</strong></li>
+<li><strong>Global events:</strong> <strong>COVID crisis</strong>, <strong>9/11 attack (2001)</strong> (the instructor lost <strong>two colleagues</strong> in the World Trade Centre), <strong>2008 financial crisis</strong></li>
+<li><strong>Personal change</strong> (good or bad). It affects the individual and also their <strong>team members</strong>, sometimes the whole team.</li>
+</ul>
+</li>
+<li><strong>How team members cope:</strong> work with leads, managers and the organisation so the change goes smoothly. Take <strong>initiative and responsibility</strong>, <strong>participate actively</strong>, <strong>share feedback</strong>, <strong>ask questions</strong>, keep <strong>communication constant and flowing</strong>, take inputs, <strong>support each other</strong>.</li>
+<li><strong><span class="star">★</span> A well-defined, documented change-management strategy helps a lot</strong>. It must be <strong>customisable and adaptable to the type of change</strong>, and it gives <strong>direction and guidance</strong>.</li>
+<li><strong><span class="star">★</span> When implementing a change strategy, remember:</strong><ul>
+<li><strong>Expect RESISTANCE.</strong> Resistance to change can turn into <strong>resentment</strong>.</li>
+<li>Communicate <strong>openly and transparently</strong> to reduce or eliminate <strong>misunderstandings, tension, anxiety and misinformation</strong>.</li>
+<li><strong>Listen actively, ask questions, take feedback</strong>. This clarifies issues and <strong>changing priorities</strong>.</li>
+<li><strong>Share the big picture and direction at regular intervals.</strong></li>
+<li><strong>Use team members&#39; individual talent and competence</strong> to manage the change.</li>
+<li><strong>Empower them with decision-making.</strong></li>
+<li><strong>Keep moving forward</strong>, with tiny steps and big steps. <strong>Making progress is the key.</strong></li>
+</ul>
+</li>
+</ul>
+<p class="src src-slide"><span class="tag">Slide</span></p>
+<ul>
+<li><strong><span class="star">★</span> Definition: &quot;Change management means to PLAN, INITIATE, CONTROL and then finally STABILIZE the change processes on both organizational and personnel levels.&quot;</strong></li>
+<li><strong><span class="star">★</span> Two perspectives:</strong><ol>
+<li><strong>Organizational change management</strong>: top-level, managerial, for the <strong>overall organisation</strong></li>
+<li><strong>Individual change management</strong>: lower-level, <strong>employee transition</strong></li>
+</ol>
+</li>
+<li><strong>Training and development</strong> to empower team members</li>
+<li><strong>Set goals and objectives</strong> so it&#39;s clear how <strong>everyone&#39;s role contributes to the bigger picture</strong></li>
+<li><strong>Engage team members and manage resistance to change</strong></li>
+</ul>
+
+</div></article><article class="ccard" style="--hue:324" data-id="c10-continuous-improvement">
+<header class="chead"><span class="cnum">10</span><h3 id="c10-continuous-improvement">Continuous Improvement</h3>
+<label class="done"><input type="checkbox" data-done="c10-continuous-improvement"> revised</label></header>
+<div class="cbody"><p class="src src-lecture"><span class="tag">Lecture</span></p>
+<ul>
+<li>A <strong>culture of continuous improvement</strong> in deliverables, products and processes improves <strong>quality and efficiency</strong>, and so <strong>customer service and customer happiness</strong>.</li>
+<li>It also boosts <strong>morale and commitment</strong>, and <strong>self-worth</strong> as people realise their potential.</li>
+<li><strong><span class="star">★</span> Continuous improvement = making tiny changes every day. Their compound effect over time gives massive results.</strong></li>
+<li><strong><span class="star">★</span> James Clear, <em>Atomic Habits</em>:</strong> <strong>1% improvement every day</strong> compounds. The lecture said &quot;<strong>a 37 percent change over a year</strong>&quot;. <em>(Exam note: the book&#39;s actual claim is 1.01^365 ≈ <strong>37 times</strong> better. If an MCQ quotes the lecture, the number is <strong>37</strong>.)</em></li>
+<li>It creates a <strong>continuous cycle of learning, improvising and growing</strong>, which is good for <strong>creation and innovation</strong>.</li>
+<li><strong><span class="star">★</span> Lean and iterative processes with comprehensive feedback loops</strong> make <strong>course corrections</strong> easier.</li>
+<li><strong>How to implement it:</strong> <strong>collaborative ideation, idea generation and brainstorming sessions</strong> to find improvements, fine-tune processes and improve quality.</li>
+<li>Because change is constant, <strong>keep upgrading your skills and abilities</strong>. This builds an <strong>ADAPTIVE culture</strong>.</li>
+</ul>
+<p class="src src-slide"><span class="tag">Slide</span></p>
+<ul>
+<li><strong>Course correction with comprehensive feedback loops</strong></li>
+<li><strong>Learn, improvise, iterate and grow</strong></li>
+<li><strong>Adaptive to change</strong></li>
+<li><strong>Workshops and team trainings</strong> to upgrade competencies and skills</li>
+<li><strong>Lean and iterative processes</strong></li>
+<li><strong>Tiny steps and tiny gains</strong></li>
+<li><strong>Surveys and assessments</strong></li>
+</ul>
+<p><strong>Professor: <span class="star s2">★★</span> KAIZEN</strong></p>
+<ul>
+<li>The <strong>Japanese</strong> were <strong>pioneers</strong> of continuous improvement.</li>
+<li><strong><span class="star">★</span> KAIZEN: &quot;Kai&quot; = change, &quot;Zen&quot; = better.</strong> It means continuously making things better.</li>
+<li><strong>Everyone from the CEO to the most junior employee</strong> contributes to organisational and process improvement.</li>
+<li>Classic example: the <strong>auto industry</strong>, which reached <strong>close to zero defects</strong>.</li>
+<li><strong>Joke:</strong> a buyer asked a Japanese supplier for fewer than a certain number of defects. The Japanese supplier didn&#39;t understand what a &quot;defect&quot; was, so they <strong>added one deliberately</strong> and sent it.</li>
+<li><strong>Why it matters:</strong> with so many market and internal changes, big problems <strong>can&#39;t be solved overnight</strong>. <strong>Break them into small pieces</strong>, assign the right people, and keep improving <strong>one day / one week at a time</strong> to get <strong>drastic improvement over time</strong>.</li>
+</ul>
+<p><strong>Professor: <span class="star s2">★★</span> Fortune 500 client case study (continuous improvement in practice)</strong></p>
+<ul>
+<li>Context: a <strong>software vendor</strong> for a <strong>Fortune 500 client</strong>. The client suddenly saw problems with <strong>employee attrition, knowledge management, and lack of innovation</strong>.</li>
+<li>There was no overnight fix. They <strong>formed core groups</strong>, <strong>assigned the right people</strong> to keep thinking about each problem, and tried <strong>small improvements</strong>.</li>
+<li><strong>Attrition:</strong> the employee-satisfaction team ran a <strong>survey</strong> on what made people unhappy. Answers included: a <strong>different technology</strong>, <strong>job rotations</strong>, <strong>breaks / less stressful projects</strong>, <strong>fun Fridays</strong>. They <strong>listened and acted</strong> on each one.</li>
+<li>This fed into <strong>productivity</strong>, and then into <strong>higher customer satisfaction</strong>.</li>
+<li><strong>Timeline: 1 to 1.5 years</strong> (not overnight).</li>
+<li><strong><span class="star">★</span> Results:</strong><ul>
+<li><strong>Employee Satisfaction Index: 3.6 → 4.1</strong> (out of 5) in about one year</li>
+<li><strong>Customer Satisfaction Index: 3.9 → 4.2</strong></li>
+</ul>
+</li>
+</ul>
+
+</div></article></section><section class="block" id="sec-6-closing-quotes-and-references-slides"><h2 id="6-closing-quotes-and-references-slides">6. Closing Quotes and References (slides) <span class="star">★</span></h2><blockquote>
+<p>&quot;You need to be aware of what others are doing, <strong>applaud their efforts, acknowledge their successes and encourage them in their pursuits. When we all help one another, everybody wins.</strong>&quot;
+<strong>Jim Stovall</strong></p>
+</blockquote>
+<blockquote>
+<p>&quot;Creating a more <strong>diverse workplace</strong> will help to <strong>keep your team members&#39; biases in check</strong> and make them <strong>question their assumptions</strong>. At the same time, we need to make sure the organization has <strong>inclusive practices</strong> so that everyone feels they can be heard. All of this can make your teams smarter and, ultimately, make your organization more successful, whatever your goals.&quot;
+<strong>Rock and Grant (2016). <em>Why Diverse Teams Are Smarter.</em> Harvard Business Review.</strong></p>
+</blockquote>
+
+</section><section class="block" id="sec-7-rapid-revision-who-what-which-c"><h2 id="7-rapid-revision-who-what-which-c">7. <span class="star">★</span> RAPID REVISION: Who / What / Which C?</h2><div class="sub"><h3 id="examples-and-stories-mapped-to-their-topic">Examples and stories mapped to their topic</h3><div class="table-wrap"><table><thead><tr>
+<th>Example / story</th>
+<th>Topic / C</th>
+</tr>
+</thead><tbody><tr>
+<td>Penguins, ants, crabs video</td>
+<td>Intro: together everyone achieves more, don&#39;t panic</td>
+</tr>
+<tr>
+<td>Labour unions; Diversity &amp; Inclusion</td>
+<td>Intro: collective power</td>
+</tr>
+<tr>
+<td>Geese in V-formation</td>
+<td>What is teamwork (also cited under Commitment, Competence, Connection)</td>
+</tr>
+<tr>
+<td>Galaxies, cells → organs</td>
+<td>Teamwork in nature: order, balance, harmony</td>
+</tr>
+<tr>
+<td>Ratan Tata quote</td>
+<td>Why teamwork</td>
+</tr>
+<tr>
+<td>Mid-managers&#39; roles aligned to strengths (appraisal 1:1s)</td>
+<td>Why teamwork</td>
+</tr>
+<tr>
+<td>Army orders passed to the last soldier</td>
+<td><strong>Clarity</strong></td>
+</tr>
+<tr>
+<td>Mobile on the hillock / cycle / &quot;you said look, not get&quot;</td>
+<td><strong>Clarity</strong></td>
+</tr>
+<tr>
+<td>ABC = Accuracy, Brevity, Clarity</td>
+<td><strong>Clarity</strong> (about communication)</td>
+</tr>
+<tr>
+<td>Cricket: saving one run</td>
+<td><strong>Commitment</strong></td>
+</tr>
+<tr>
+<td>Maid with 100 missed calls</td>
+<td><strong>Commitment</strong></td>
+</tr>
+<tr>
+<td>Simon Sinek video (trust, being there)</td>
+<td><strong>Commitment</strong></td>
+</tr>
+<tr>
+<td>Section commander / &quot;Sir, I knew you will come&quot;</td>
+<td><strong>Commitment</strong></td>
+</tr>
+<tr>
+<td>Deep vs surface commitment (date, time, contingency)</td>
+<td><strong>Commitment</strong></td>
+</tr>
+<tr>
+<td>TGIF Fridays, knowledge repository</td>
+<td><strong>Communication</strong></td>
+</tr>
+<tr>
+<td>Psychological safety (first named here)</td>
+<td><strong>Communication</strong> (and Collaboration, Conflict Resolution)</td>
+</tr>
+<tr>
+<td>NASCAR pit crew</td>
+<td><strong>Competence</strong></td>
+</tr>
+<tr>
+<td>Sundar Pichai: consensus, &quot;person amongst equals&quot;</td>
+<td><strong>Collaboration</strong></td>
+</tr>
+<tr>
+<td>Mumbai Dabbawalas (5,000 serve 2 lakh, 99.9999%)</td>
+<td><strong>Coordination</strong></td>
+</tr>
+<tr>
+<td>A-frame march, caterpillar walk, IITM event</td>
+<td><strong>Coordination</strong></td>
+</tr>
+<tr>
+<td>Dr. Abdul Kalam takes the scientist&#39;s kids to the exhibition</td>
+<td><strong>Connection</strong></td>
+</tr>
+<tr>
+<td>ABC = Avoid, Bypass, Confuse</td>
+<td><strong>Conflict Resolution</strong></td>
+</tr>
+<tr>
+<td>Annual reorganisations, 9/11, 2008 crisis, COVID</td>
+<td><strong>Change Management</strong></td>
+</tr>
+<tr>
+<td>Atomic Habits (1% per day)</td>
+<td><strong>Continuous Improvement</strong></td>
+</tr>
+<tr>
+<td>Kaizen, Japanese auto industry, the &quot;defect&quot; joke</td>
+<td><strong>Continuous Improvement</strong></td>
+</tr>
+<tr>
+<td>Fortune 500 client: ESI 3.6→4.1, CSI 3.9→4.2</td>
+<td><strong>Continuous Improvement</strong></td>
+</tr>
+</tbody></table></div></div><div class="sub"><h3 id="numbers-to-remember">Numbers to remember</h3><div class="table-wrap"><table><thead><tr>
+<th>Number</th>
+<th>Context</th>
+</tr>
+</thead><tbody><tr>
+<td><strong>10</strong></td>
+<td>C&#39;s of teamwork; also soldiers under a section commander</td>
+</tr>
+<tr>
+<td><strong>9</strong></td>
+<td>Common challenges in teamwork (slide)</td>
+</tr>
+<tr>
+<td><strong>10</strong></td>
+<td>Benefits of teamwork listed on the slide</td>
+</tr>
+<tr>
+<td><strong>30–60%</strong></td>
+<td>Effort the V-formation saves (professor&#39;s estimate)</td>
+</tr>
+<tr>
+<td><strong>100</strong></td>
+<td>Missed calls from the maid</td>
+</tr>
+<tr>
+<td><strong>10–15 m</strong></td>
+<td>Distance to the dying soldier&#39;s trench</td>
+</tr>
+<tr>
+<td><strong>~5,000 / ~2 lakh / 100% / 99.9999%</strong></td>
+<td>Dabbawalas / customers / satisfaction / performance</td>
+</tr>
+<tr>
+<td><strong>5:30 pm / 8 pm</strong></td>
+<td>Kalam story: permitted leave time / when the scientist finished</td>
+</tr>
+<tr>
+<td><strong>2001 / 2008</strong></td>
+<td>9/11 attack / financial crisis</td>
+</tr>
+<tr>
+<td><strong>1% daily → 37</strong></td>
+<td>Atomic Habits (lecture says &quot;37 percent&quot;; the book says 37x)</td>
+</tr>
+<tr>
+<td><strong>3.6 → 4.1</strong></td>
+<td>Employee satisfaction index (out of 5)</td>
+</tr>
+<tr>
+<td><strong>3.9 → 4.2</strong></td>
+<td>Customer satisfaction index</td>
+</tr>
+<tr>
+<td><strong>1–1.5 years</strong></td>
+<td>Time the Fortune 500 improvements took</td>
+</tr>
+<tr>
+<td><strong>2016</strong></td>
+<td>Rock &amp; Grant, HBR, &quot;Why Diverse Teams Are Smarter&quot;</td>
+</tr>
+<tr>
+<td><strong>2011</strong></td>
+<td>&quot;Teamwork&quot; definition, <em>Business: The Ultimate Resource</em> (A&amp;C Black)</td>
+</tr>
+</tbody></table></div></div><div class="sub"><h3 id="key-pairs-and-contrasts-common-mcq-traps">Key pairs and contrasts (common MCQ traps)</h3><ul>
+<li><strong>Collaboration = DIVERGENT</strong> thinking vs <strong>Coordination = CONVERGENT</strong> thinking. Coordination <strong>follows</strong> collaboration.</li>
+<li><strong>ABC of communication</strong> (Accuracy, Brevity, Clarity) vs <strong>ABC of escaping tasks</strong> (Avoid, Bypass, Confuse).</li>
+<li><strong>Surface commitment</strong> (&quot;I will do it&quot;) vs <strong>deep commitment</strong> (dates, owners, tracking, contingencies).</li>
+<li><strong>Organizational</strong> change management (top-level) vs <strong>Individual</strong> change management (employee transition).</li>
+<li><strong>Interpersonal</strong> conflict vs <strong>inner</strong> conflict.</li>
+<li><strong>SLAs</strong> = formal agreements with <strong>clients</strong>. Inside teams, turn <strong>expectations into clear (written) mutual agreements</strong>.</li>
+<li>Commitment is <strong>personal and internal</strong>, an <strong>honor code to yourself</strong>.</li>
+<li><strong>Core competence</strong> (per the slide) = <strong>getting along / working in harmony</strong> toward a shared goal.</li>
+<li><strong>Psychological safety</strong> = a safe, non-judgmental space. The <strong>leader acts as facilitator</strong> to create it. It appears in Communication, Collaboration and Conflict Resolution.</li>
+<li>Collaboration power goes to <strong>shared</strong> leadership/vision/goals, <strong>not to authority or hierarchy</strong>.</li>
+<li>Source of conflict = <strong>expectations</strong>. &quot;No conflict at all means something is seriously wrong.&quot;</li>
+<li>Clarity is <strong>first</strong> because it is the <strong>most primary</strong>.</li>
+<li><strong>Kaizen</strong>: Kai = change, Zen = better.</li>
+</ul>
+</div><div class="sub"><h3 id="one-line-definitions">One-line definitions</h3><ul>
+<li><strong>Teamwork:</strong> collaboration by a group of people to achieve a common purpose, ideally with complementary skills.</li>
+<li><strong>Commitment:</strong> a deep intent to make sure things happen the way we envision.</li>
+<li><strong>Psychological safety:</strong> a safe, non-judgmental space and environment.</li>
+<li><strong>Connection:</strong> getting along with one another in harmony and peace.</li>
+<li><strong>Coordination:</strong> convergent thinking. Converge on an idea, then plan, schedule, execute.</li>
+<li><strong>Change management:</strong> plan, initiate, control and stabilise change processes at organisational and personnel levels.</li>
+<li><strong>Continuous improvement:</strong> tiny daily changes whose compound effect gives massive results.</li>
+</ul>
+
+</div></section><section class="block" id="sec-8-possible-long-answer-question"><h2 id="8-possible-long-answer-question">8. Possible Long-Answer Question</h2><p><strong>&quot;What are some of the challenges associated with working in a team? Explain with a real-life example.&quot;</strong>
+Answer frame:</p>
+<ol>
+<li>Define teamwork (the Business: The Ultimate Resource definition).</li>
+<li>Name 3–4 challenges from the list of 9 (e.g. lack of trust, working in silos, lack of common goals, not managing the weakest link).</li>
+<li>Give a real example (a college project or a workplace).</li>
+<li>Map each fix to a <strong>C</strong>: lack of direction → <strong>Clarity</strong>; lack of trust → <strong>Connection/Communication</strong>; conflict → <strong>Conflict Resolution</strong>; silos → <strong>Collaboration/Coordination</strong>; weakest link → <strong>Competence</strong>, peer support, <strong>Continuous Improvement</strong>.</li>
+<li>Close with a quote (Ratan Tata or Jim Stovall).</li>
+</ol>
+<p><em>Good luck tomorrow!</em></p>
+</section>
+    <footer>Made for exam revision · All the best! 🍀</footer>
+  </main>
+</div>
+<button class="btn" id="toTop" aria-label="Back to top">↑ Top</button>
+
+<script>
+(function(){
+  const root=document.documentElement, store={
+    get(k){try{return localStorage.getItem(k)}catch(e){return null}},
+    set(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+  };
+  // theme
+  const t=store.get('spg-theme'); if(t) root.dataset.theme=t;
+  document.getElementById('themeBtn').onclick=()=>{
+    const dark=root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+    root.dataset.theme=dark?'light':'dark'; store.set('spg-theme',root.dataset.theme);
+  };
+  // star focus
+  document.querySelectorAll('main .star').forEach(s=>{const el=s.closest('li,p,tr,blockquote'); if(el) el.classList.add('has-star');});
+  const fb=document.getElementById('focusBtn');
+  fb.onclick=()=>{const on=document.body.classList.toggle('focus'); fb.setAttribute('aria-pressed',on);};
+  // mobile nav
+  document.getElementById('menuBtn').onclick=()=>document.body.classList.toggle('nav-open');
+  document.addEventListener('click',e=>{ if(document.body.classList.contains('nav-open') && !e.target.closest('#toc,#menuBtn')) document.body.classList.remove('nav-open'); });
+  document.querySelectorAll('#toc a').forEach(a=>a.addEventListener('click',()=>document.body.classList.remove('nav-open')));
+  // revised checkboxes
+  let done={}; try{done=JSON.parse(store.get('spg-done')||'{}')}catch(e){}
+  const boxes=[...document.querySelectorAll('[data-done]')];
+  function sync(){
+    let n=0; boxes.forEach(b=>{const id=b.dataset.done, on=!!done[id]; b.checked=on; if(on)n++;
+      b.closest('.ccard').classList.toggle('is-done',on);
+      const tick=document.querySelector('[data-tick="'+id+'"]'); if(tick) tick.classList.toggle('on',on);});
+    document.getElementById('doneCount').textContent=n;
+    document.getElementById('doneBar').style.width=(n/boxes.length*100)+'%';
+  }
+  boxes.forEach(b=>b.onchange=()=>{done[b.dataset.done]=b.checked; store.set('spg-done',JSON.stringify(done)); sync();});
+  sync();
+  // progress + scrollspy
+  const links=[...document.querySelectorAll('#toc a')], targets=links.map(a=>document.getElementById(a.getAttribute('href').slice(1)));
+  const bar=document.getElementById('progress'), top=document.getElementById('toTop');
+  function onScroll(){
+    const h=document.documentElement; bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+    top.classList.toggle('show',h.scrollTop>800);
+    let i=targets.findLastIndex(el=>el && el.getBoundingClientRect().top<120);
+    links.forEach((a,j)=>a.classList.toggle('active',j===i));
+  }
+  addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  top.onclick=()=>scrollTo({top:0});
+})();
+</script>
+</body>
+</html>
